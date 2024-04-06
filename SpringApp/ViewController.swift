@@ -26,11 +26,11 @@ class ViewController: UIViewController {
         let preset = DataStore.shared.presets
         let curve = DataStore.shared.curves
         
-        let randomIndex = Int.random(in: 0..<preset.count)
-        let nextValue = preset[randomIndex]
+        let randomPresetIndex = Int.random(in: 0..<preset.count)
+        let nextPreset = preset[randomPresetIndex]
         
         
-        springAnimationView.animation = nextValue
+        springAnimationView.animation = nextPreset
         springAnimationView.curve = curve.randomElement() ?? ""
         springAnimationView.force = CGFloat(Int.random(in: 1...2))
         springAnimationView.duration = CGFloat(Int.random(in: 1...2))
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         
         sender.animation = "zoomIn"
         sender.duration = 1
-        sender.setTitle("Run \(nextValue)", for: .normal)
+        sender.setTitle("Run \(nextPreset)", for: .normal)
         sender.animate()
     }
     

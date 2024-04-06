@@ -12,7 +12,6 @@ struct Animation {
     
     let preset: String
     let curve: String
-
 }
 
 
